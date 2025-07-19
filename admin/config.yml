@@ -1,0 +1,38 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "img"
+public_folder: "/img"
+
+collections:
+  - name: "ajustes"
+    label: "Ajustes del sitio"
+    files:
+      - file: "index.html"
+        label: "Inicio"
+        name: "inicio"
+        fields:
+          - { label: "Frase principal", name: "frase", widget: "string" }
+
+  - name: "fisicos"
+    label: "Productos Físicos"
+    folder: "productos/fisicos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nombre", name: "nombre", widget: "string" }
+      - { label: "Descripción", name: "descripcion", widget: "text" }
+      - { label: "Enlace", name: "enlace", widget: "string" }
+      - { label: "Imagen", name: "imagen", widget: "image" }
+
+  - name: "digitales"
+    label: "Productos Digitales"
+    folder: "productos/digitales"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nombre", name: "nombre", widget: "string" }
+      - { label: "Descripción", name: "descripcion", widget: "text" }
+      - { label: "Enlace", name: "enlace", widget: "string" }
+      - { label: "Imagen", name: "imagen", widget: "image" }
